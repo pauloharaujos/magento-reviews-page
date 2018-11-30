@@ -1,0 +1,178 @@
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+<?php $collection = $this->getCollection();?>
+<?php //$collection->addStoreFilter(Mage::app()->getStore()->getId()); ?>
+<?php //echo $this->getPagerHtml(); ?>
+<?php
+$store = Mage::app()->getStore();
+$store_name = $store->getName();
+?>
+
+<!--<div itemscope itemtype="http://schema.org/Store" style="display:none;">-->
+<!---->
+<!--    <meta itemprop="name" content="--><?php //echo $store_name; ?><!--" >-->
+<!--    <meta itemprop="description" content="--><?php //echo $store_name . ' super confiável' ?><!--" >-->
+<!---->
+<!--    <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" style="display: none;">-->
+<!--        <span itemprop="ratingValue">5</span>-->
+<!--        <span itemprop="bestRating">5</span>-->
+<!--        <span itemprop="ratingCount">--><?php //echo $collection->getSize(); ?><!--</span>-->
+<!--    </span>-->
+<!---->
+<!--</div>-->
+
+<?php if($collection->getSize()): ?>
+
+<div class="container" style="margin-top: 30px;">
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-3">
+            <div class="review-store-box review-add review-view">
+                <svg viewBox="0 0 100 100"> <path fill="none" stroke-width="7" stroke="#f2f2f2" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
+                    <path fill="none" class="review-progress review-product" id="review_0" stroke-linecap="round" stroke-width="7" stroke="#ffca00" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" data-item="5" data-option="review_0" data-flag="store" ></path>
+                    <text x="50" y="48" text-anchor="middle" dy="7" font-size="35" fill="#ffca00" class="review-text review-text-store" id="text_review_0">5.0</text> <text x="50" y="60" text-anchor="middle" dy="7" font-size="7" width="100">Avaliação da</text> <text x="50" y="68" text-anchor="middle" dy="7" font-size="7" width="100">Loja</text> </svg> <p class="text-center">
+                    <b><?php echo $collection->getSize(); ?> Avaliações da Loja</b></p>
+            </div>
+        </div>
+
+        <div class="col-xs-12 col-sm-9" style="width: 74%;">
+            <h1 class="review-title" title="<?php echo $store_name . ' é confiável?' ?>">
+                <b><?php echo $store_name . ' é uma loja confiável?' ?></b>
+            </h1>
+
+            <ul class="block-reviews">
+
+        <?php foreach ($collection as $review): ?>
+
+<!--            <div itemscope itemtype="http://schema.org/Review" style="display:none;">-->
+<!---->
+<!--                <meta itemprop="name" content="--><?php //echo $review['detail'];  ?><!--" >-->
+<!--                <meta itemprop="reviewBody" content="--><?php //echo $review['detail'];  ?><!--" >-->
+<!---->
+<!--                <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Store" style="display: none;">-->
+<!--                <span itemprop="name">--><?php //echo $store_name . ' é uma loja confiável?' ?><!--</span>-->
+<!--                </span>-->
+<!--                    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" style="display: none;">-->
+<!--                    <span itemprop="ratingValue">5</span>-->
+<!--                </span>-->
+<!---->
+<!--                <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">-->
+<!--                    <span itemprop="name">--><?php //echo $review['nickname'];  ?><!--</span>-->
+<!--                </span>-->
+<!--            </div>-->
+
+            <li>
+                <div class="row">
+                    <div class="col-sm-3 text-center">
+                        <div class="comment">
+                            <i class="fa fa-comments"></i>
+                        </div>
+                        <div class="name">
+                            <b><?php echo $review['nickname'];  ?></b>
+                        </div>
+                        <ul class="review-stars">
+                            <li class="active">
+                                <i class="fa fa-star"></i>
+                            </li> <li class="active">
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star"></i>
+                            </li> <li class="active">
+                                <i class="fa fa-star"></i>
+                            </li>
+                            <li class="active">
+                                <i class="fa fa-star"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    <?php
+                    $ano= substr($review['created_at'], 0, -15);
+                    $mes= substr($review['created_at'], 5,-12);
+                    $dia= substr($review['created_at'], 8,-9);
+                    $novadata =  $dia."/".$mes."/".$ano;
+                    ?>
+
+                    <div class="col-sm-9">
+                        <div class="review">
+                            <span class="added">Avaliado em <time datetime=""><?php echo $novadata;  ?> </time></span>
+                            <ul class="answer">
+                                <li>
+                                    <p class="title">Qual foi sua experiência de compra na loja?</p>
+                                    <h3> <?php echo $review['detail'];  ?></h3>
+                                </li>
+                            </ul>
+                            <div class="review-store-box review-store-list">
+                                <span>
+                                    <svg viewBox="0 0 100 100"> <path fill="none" stroke-width="8" stroke="#f2f2f2" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path> <path fill="none" class="review-progress review-product" id="review_2376" data-item="5" data-option="review_2376" data-flag="store" stroke-linecap="round" stroke-width="8" stroke="#ffca00" d="M50 10 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 251.363, 251.363; stroke-dashoffset: 0;"></path> <text x="50" y="28" text-anchor="middle" dy="7" font-size="10" width="100">Nota</text> <text x="50" y="60" text-anchor="middle" dy="7" font-size="35" fill="#ffca00" class="review-text" id="text_review_2376">5.0</text> </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        <?php endforeach; ?>
+
+            <div itemscope itemtype="http://schema.org/Product" style="display: none;">
+                <meta itemprop="name" content="<?php echo $review['detail'];  ?>">
+
+                <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" style="display: none;">
+                    <span itemprop="ratingValue">5</span>
+                    <span itemprop="reviewCount"><?php echo $collection->getSize(); ?></span>
+                    <span itemprop="ratingCount"><?php echo $collection->getSize(); ?></span>
+                </span>
+            </div>
+
+            <div itemscope itemtype="http://schema.org/BreadcrumbList" style="display: none;">
+                <div itemprop="itemListElement" itemscope
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href=" <?php echo $store . '/lojaconfiavel'; ?>">
+                        <span itemprop="name"><?php echo $review['detail'];  ?></span>
+                    </a>
+                    <meta itemprop="position" content="1" />
+                </div>
+                <div itemprop="itemListElement" itemscope
+                    itemtype="http://schema.org/ListItem">
+                    <a itemprop="item" href=" <?php echo $store . '/lojaconfiavel'; ?>">
+                        <span itemprop="name"><?php echo $review['detail']; ?></span></a>
+                    <meta itemprop="position" content="2" />
+                </div>
+            </div>
+
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <script type="text/javascript">decorateTable('my-custom-table');</script>
+    <?php echo $this->getPagerHtml(); ?>
+<?php else: ?>
+    <p><?php echo $this->__('The collection is empty.'); ?></p>
+<?php endif ?>
+
+<script>
+
+    var element = document.getElementById("review_0");
+    var pathLength = element.getTotalLength();
+
+    element.style.strokeDasharray = pathLength;
+    element.style.strokeDashoffset = pathLength;
+
+    function animateRoute(e, len)
+    {
+        // Each step we decrement the dash offset
+        len -= 12;
+        if (len < 0)
+            len = 0;  // clamp to minimum 0
+
+        element.style.strokeDashoffset = len;
+
+        // We need to stop looping when the length gets to 0
+        if (len > 0) {
+            // Do another step
+            setTimeout(function() { animateRoute(e, len); }, 0);
+        }
+    }
+
+    animateRoute(element, pathLength);
+</script>

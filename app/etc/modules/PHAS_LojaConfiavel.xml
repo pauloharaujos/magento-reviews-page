@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <PHAS_LojaConfiavel>
+            <active>true</active>
+            <codePool>local</codePool>
+        </PHAS_LojaConfiavel>
+    </modules>
+</config>

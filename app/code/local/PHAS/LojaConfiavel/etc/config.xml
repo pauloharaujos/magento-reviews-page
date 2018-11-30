@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <PHAS_LojaConfiavel>
+            <version>1.0.0</version>
+        </PHAS_LojaConfiavel>
+    </modules>
+    <global>
+        <blocks>
+            <lojaconfiavel>
+                <class>PHAS_LojaConfiavel_Block</class>
+            </lojaconfiavel>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <phas_lojaconfiavel>
+                    <file>phas_lojaconfiavel.xml</file>
+                </phas_lojaconfiavel>
+            </updates>
+        </layout>
+        <routers>
+            <lojaconfiavel>
+                <use>standard</use>
+                <args>
+                    <module>PHAS_LojaConfiavel</module>
+                    <frontName>lojaconfiavel</frontName>
+                </args>
+            </lojaconfiavel>
+        </routers>
+    </frontend>
+</config>
