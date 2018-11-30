@@ -1,24 +1,9 @@
 <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
 <?php $collection = $this->getCollection();?>
-<?php //$collection->addStoreFilter(Mage::app()->getStore()->getId()); ?>
-<?php //echo $this->getPagerHtml(); ?>
 <?php
 $store = Mage::app()->getStore();
 $store_name = $store->getName();
 ?>
-
-<!--<div itemscope itemtype="http://schema.org/Store" style="display:none;">-->
-<!---->
-<!--    <meta itemprop="name" content="--><?php //echo $store_name; ?><!--" >-->
-<!--    <meta itemprop="description" content="--><?php //echo $store_name . ' super confiável' ?><!--" >-->
-<!---->
-<!--    <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" style="display: none;">-->
-<!--        <span itemprop="ratingValue">5</span>-->
-<!--        <span itemprop="bestRating">5</span>-->
-<!--        <span itemprop="ratingCount">--><?php //echo $collection->getSize(); ?><!--</span>-->
-<!--    </span>-->
-<!---->
-<!--</div>-->
 
 <?php if($collection->getSize()): ?>
 
@@ -43,24 +28,6 @@ $store_name = $store->getName();
             <ul class="block-reviews">
 
         <?php foreach ($collection as $review): ?>
-
-<!--            <div itemscope itemtype="http://schema.org/Review" style="display:none;">-->
-<!---->
-<!--                <meta itemprop="name" content="--><?php //echo $review['detail'];  ?><!--" >-->
-<!--                <meta itemprop="reviewBody" content="--><?php //echo $review['detail'];  ?><!--" >-->
-<!---->
-<!--                <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Store" style="display: none;">-->
-<!--                <span itemprop="name">--><?php //echo $store_name . ' é uma loja confiável?' ?><!--</span>-->
-<!--                </span>-->
-<!--                    <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating" style="display: none;">-->
-<!--                    <span itemprop="ratingValue">5</span>-->
-<!--                </span>-->
-<!---->
-<!--                <span itemprop="author" itemscope itemtype="http://schema.org/Person" style="display: none;">-->
-<!--                    <span itemprop="name">--><?php //echo $review['nickname'];  ?><!--</span>-->
-<!--                </span>-->
-<!--            </div>-->
-
             <li>
                 <div class="row">
                     <div class="col-sm-3 text-center">
@@ -112,33 +79,6 @@ $store_name = $store->getName();
                 </div>
             </li>
         <?php endforeach; ?>
-
-            <div itemscope itemtype="http://schema.org/Product" style="display: none;">
-                <meta itemprop="name" content="<?php echo $review['detail'];  ?>">
-
-                <span itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" style="display: none;">
-                    <span itemprop="ratingValue">5</span>
-                    <span itemprop="reviewCount"><?php echo $collection->getSize(); ?></span>
-                    <span itemprop="ratingCount"><?php echo $collection->getSize(); ?></span>
-                </span>
-            </div>
-
-            <div itemscope itemtype="http://schema.org/BreadcrumbList" style="display: none;">
-                <div itemprop="itemListElement" itemscope
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href=" <?php echo $store . '/lojaconfiavel'; ?>">
-                        <span itemprop="name"><?php echo $review['detail'];  ?></span>
-                    </a>
-                    <meta itemprop="position" content="1" />
-                </div>
-                <div itemprop="itemListElement" itemscope
-                    itemtype="http://schema.org/ListItem">
-                    <a itemprop="item" href=" <?php echo $store . '/lojaconfiavel'; ?>">
-                        <span itemprop="name"><?php echo $review['detail']; ?></span></a>
-                    <meta itemprop="position" content="2" />
-                </div>
-            </div>
-
             </ul>
         </div>
     </div>

@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <lojaconfiavel_index_index>
+    <reviewspage_index_index>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>
         </reference>
         <reference name="content">
-            <block type="lojaconfiavel/collection" name="lojaconfiavel" template="lojaconfiavel/collection.phtml" />
+            <block type="reviewspage/collection" name="reviewspage" template="reviewspage/collection.phtml" />
         </reference>
-    </lojaconfiavel_index_index>
+    </reviewspage_index_index>
 </layout>

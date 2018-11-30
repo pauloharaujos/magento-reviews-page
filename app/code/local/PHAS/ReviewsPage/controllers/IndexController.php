@@ -1,5 +1,5 @@
 <?php
-class PHAS_LojaConfiavel_IndexController extends Mage_Core_Controller_Front_Action
+class PHAS_ReviewsPage_IndexController extends Mage_Core_Controller_Front_Action
 {
     public function indexAction()
     {

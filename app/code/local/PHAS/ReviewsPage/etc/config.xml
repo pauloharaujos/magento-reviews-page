@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <PHAS_ReviewsPage>
+            <version>1.0.0</version>
+        </PHAS_ReviewsPage>
+    </modules>
+    <global>
+        <blocks>
+            <reviewspage>
+                <class>PHAS_ReviewsPage_Block</class>
+            </reviewspage>
+        </blocks>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <phas_reviewspage>
+                    <file>phas_reviewspage.xml</file>
+                </phas_reviewspage>
+            </updates>
+        </layout>
+        <routers>
+            <reviewspage>
+                <use>standard</use>
+                <args>
+                    <module>PHAS_ReviewsPage</module>
+                    <frontName>reviewspage</frontName>
+                </args>
+            </reviewspage>
+        </routers>
+    </frontend>
+</config>

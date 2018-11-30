@@ -1,5 +1,5 @@
 <?php
-class PHAS_LojaConfiavel_Block_Collection extends Mage_Core_Block_Template
+class PHAS_ReviewsPage_Block_Collection extends Mage_Core_Block_Template
 {
     public function __construct()
     {
@@ -9,8 +9,6 @@ class PHAS_LojaConfiavel_Block_Collection extends Mage_Core_Block_Template
             ->getResourceCollection()
             ->addStoreFilter(Mage::app()->getStore()->getId())
             ->addStatusFilter(Mage_Review_Model_Review::STATUS_APPROVED);
-//            ->setDateOrder()
-//            ->addRateVotes();
 
         $this->setCollection($collection);
     }
