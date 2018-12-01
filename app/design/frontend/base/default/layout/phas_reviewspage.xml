@@ -8,7 +8,8 @@
             <block type="reviewspage/collection" name="reviewspage" template="reviewspage/collection.phtml" />
         </reference>
 		<reference name="head">
-			<action method="addCss"><name>css/reviewspage.css</name></action>
+            <action method="addCss"><name>css/reviewspage/bootstrap.min.css</name></action>
+			<action method="addCss"><name>css/reviewspage/reviewspage.css</name></action>
 		</reference>
     </reviewspage_index_index>
 </layout>
